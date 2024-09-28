@@ -56,9 +56,10 @@ Make sure to set the OPENAI_API_KEY in your environment variables
 	python main.py
 
 This script will:
-Load student data from students.json.
-Extract phrases from the given passage (passage.txt).
-Use the defined generative AI model to create interventions for each student based on the context of the passage and the student’s profile.
+
+1. Load student data from students.json.
+2. Extract phrases from the given passage (passage.txt).
+3. Use the defined generative AI model to create interventions for each student based on the context of the passage and the student’s profile.
 
 Understanding main.py:
 
