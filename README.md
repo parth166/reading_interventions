@@ -8,20 +8,23 @@ The project utilizes generative AI to create dynamic and adaptable word-level in
 The repository is organized into different directories and files for efficient management:
 
 ├── classes
-│   ├── intervention.py        # Class definition for intervention-related data
-│   ├── student.py             # Class definition for a student enrolled on the Amira platform
-│   └── word.py                # Class definition for a word and its properties
-├── dataset
-│   ├── passage.txt            # List of passages for the given study
-│   ├── students.json          # Sample ~ synthetically generated student data
-│   └── words.csv              # Extracted set of words from passage.txt
-├── intervention_components
-│   ├── template.txt           # Prompt template for the generative AI model
-│   └── emotional_tones.txt    # Template for extracting different pronunciations based on context
-├── gpt.py                     # Wrapper for OpenAI's GPT-3/4 API calls
-├── main.py                    # Main script to create interventions for students
-├── utils.py                   # Helper functions for data extraction and intervention generation
-└── requirements.txt           # List of dependencies for the project
+micro-intervention/
+├── classes/                    # Contains class definitions
+│   ├── intervention.py         # Defines the Intervention class for intervention data
+│   ├── student.py              # Defines the Student class for a student profile
+│   └── word.py                 # Defines the Word class and its properties
+├── dataset/                    # Contains the dataset files used for intervention creation
+│   ├── passage.txt             # List of passages used in the study
+│   ├── students.json           # Sample synthetic student data
+│   └── words.csv               # Extracted set of words from the passage
+├── intervention_components/    # Contains prompt templates and components
+│   ├── template.txt            # Prompt template for the generative AI model
+│   └── emotional_tones.txt     # Template for generating emotional tone-based variations
+├── gpt.py                      # Wrapper for OpenAI API integration
+├── main.py                     # Main script to create interventions for students
+├── utils.py                    # Helper functions for data extraction and intervention generation
+└── requirements.txt            # List of dependencies for the project
+
 
 # Installation and Setup
 
