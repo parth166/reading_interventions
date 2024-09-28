@@ -30,7 +30,7 @@ The repository is organized into different directories and files for efficient m
 Clone the Repository
 
 1. git clone https://github.com/parth166/reading_interventions.git
-2. cd micro-intervention
+2. cd into the directory
 
 ## Install Dependencies:
 
