@@ -27,20 +27,20 @@ The repository is organized into different directories and files for efficient m
 
 ## To run the project, follow these steps:
 
-Clone the Repository:
+Clone the Repository
 
-git clone <repository-url>
-cd micro-intervention
+1. git clone https://github.com/parth166/reading_interventions.git
+2. cd micro-intervention
 
 ## Install Dependencies:
 
-Use the requirements.txt file to install the necessary libraries:
+Use the requirements.txt file to install the necessary libraries
 
 pip install -r requirements.txt
 
 ## Set Up Environment Variables:
 
-Make sure to set the OPENAI_API_KEY in your environment variables:
+Make sure to set the OPENAI_API_KEY in your environment variables
 
 export OPENAI_API_KEY='your_openai_api_key'
 
