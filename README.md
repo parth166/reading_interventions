@@ -114,7 +114,7 @@ Prompt Templates (intervention_components/):
 
 # Intervention Design Motivation
 
-## Interventions implemented: 
+## Interventions implemented 
 1. intervention by rhyming words: Hearing rhyming words for a given word can help the students understand tail sounds Example: Ping, Sing, Sling etc. (helps in pronunciation)
 2. Synthetically create Stories: Having an engaging story using the given word makes the students retain the words better. (helps in retention and comprehension)
 
