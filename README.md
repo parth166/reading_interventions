@@ -64,16 +64,16 @@ Understanding main.py:
 
 The core logic in main.py is responsible for creating and saving interventions for each student:
 
-def create_interventions(phrases, students):
-    llm_config = json.load(open("llm_config.json"))
+	def create_interventions(phrases, students):
+    		llm_config = json.load(open("llm_config.json"))
 
-    with open("interventions.jsonl", "a") as f:
-        for student in students:
-            for phrase in tqdm(phrases):
-                for word in phrase.split(" "):
-                    intervention = get_word_intervention(word, phrase, student, llm_config)
-                    json.dump(intervention, f)
-                    f.write("\n")
+		with open("interventions.jsonl", "a") as f:
+        			for student in students:
+            			for phrase in tqdm(phrases):
+                				for word in phrase.split(" "):
+                    				intervention = get_word_intervention(word, phrase, student, llm_config)
+				                 json.dump(intervention, f)
+						f.write("\n")
 
 Interventions are saved in the interventions.jsonl file in JSON format.
 
