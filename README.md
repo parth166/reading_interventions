@@ -22,6 +22,7 @@ The repository is organized into different directories and files for efficient m
 	├── gpt.py                      # Wrapper for OpenAI API integration
 	├── main.py                     # Main script to create interventions for students
 	├── utils.py                    # Helper functions for data extraction and intervention generation
+	├── read_interventions.py # File to view and extract intervention content for downstream pipeline	
 	└── requirements.txt            # List of dependencies for the project
 
 
@@ -77,6 +78,10 @@ The core logic in main.py is responsible for creating and saving interventions f
 	    f.close()
 
 Interventions are saved in the interventions.jsonl file in JSON format.
+
+### To read the saved interventions
+
+	python read_interventions.py
 
 ## Key Components
 1. Student Class (student.py):

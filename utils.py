@@ -37,7 +37,6 @@ def get_word_object(word, phrase, config):
     
     word_obj = None
     try:
-        # word_obj = Word(word, phrase, response["pronunciation_american"], response["pronunciation_british"], response["meaning"], response["synonyms"], response["antonyms"], response["r"])
         word_obj = Word(word, phrase, **response)
     except:
         print("Could not fetch details for the word", word)
