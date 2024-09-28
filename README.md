@@ -123,8 +123,8 @@ Prompt Templates (intervention_components/):
 2. Dynamic interventions are extremely important as compared to static interventions as they cover numerous cases like:
 	- Context dependent pronunciation (Past tense pronunciation of "read" is "RED" and present tense pronunciation is "REED")
 	- Cultural impact of pronunciation is extremely important (American English has different pronunciations when compared to British English, hence such information should be incorporated while designing interventions).
-	- Intervention object is unique for every student for a given phrase as both the "phrase" and "region" are used.
-	- Student preference is modelled inside the student object but intervention object contains both (story based) and (rhyming based) interventions. Hence, each word can be presented in multiple ways to the student (idea: Having more data and not needing it is better than having no data and needing it).
+3. Intervention object is unique for every student for a given phrase as both the "phrase" and "region" are used.
+4. Student preference is modelled inside the student object but intervention object contains both (story based) and (rhyming based) interventions. Hence, each word can be presented in multiple ways to the student (idea: Having more data and not needing it is better than having no data and needing it).
 
 # Future Enhancements
 
