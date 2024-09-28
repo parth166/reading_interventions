@@ -39,13 +39,13 @@ Clone the Repository
 
 Use the requirements.txt file to install the necessary libraries
 
-pip install -r requirements.txt
+	pip install -r requirements.txt
 
 ## Set Up Environment Variables:
 
 Make sure to set the OPENAI_API_KEY in your environment variables
 
-export OPENAI_API_KEY='your_openai_api_key'
+	export OPENAI_API_KEY='your_openai_api_key'
 
 # How to Run the Project
 
@@ -53,7 +53,7 @@ export OPENAI_API_KEY='your_openai_api_key'
 
 ### To generate interventions for students:
 
-python main.py
+	python main.py
 
 This script will:
 Load student data from students.json.
