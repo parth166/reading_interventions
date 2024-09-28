@@ -7,23 +7,23 @@ The project utilizes generative AI to create dynamic and adaptable word-level in
 # Project Structure
 The repository is organized into different directories and files for efficient management:
 
-├── classes
+
 micro-intervention/
-├── classes/                    # Contains class definitions
-│   ├── intervention.py         # Defines the Intervention class for intervention data
-│   ├── student.py              # Defines the Student class for a student profile
-│   └── word.py                 # Defines the Word class and its properties
-├── dataset/                    # Contains the dataset files used for intervention creation
-│   ├── passage.txt             # List of passages used in the study
-│   ├── students.json           # Sample synthetic student data
-│   └── words.csv               # Extracted set of words from the passage
-├── intervention_components/    # Contains prompt templates and components
-│   ├── template.txt            # Prompt template for the generative AI model
-│   └── emotional_tones.txt     # Template for generating emotional tone-based variations
-├── gpt.py                      # Wrapper for OpenAI API integration
-├── main.py                     # Main script to create interventions for students
-├── utils.py                    # Helper functions for data extraction and intervention generation
-└── requirements.txt            # List of dependencies for the project
+── classes/                    # Contains class definitions
+│   ── intervention.py         # Defines the Intervention class for intervention data
+│   ── student.py              # Defines the Student class for a student profile
+│   ── word.py                 # Defines the Word class and its properties
+── dataset/                    # Contains the dataset files used for intervention creation
+│   ── passage.txt             # List of passages used in the study
+│   ── students.json           # Sample synthetic student data
+│   ── words.csv               # Extracted set of words from the passage
+── intervention_components/    # Contains prompt templates and components
+│   ── template.txt            # Prompt template for the generative AI model
+│   ── emotional_tones.txt     # Template for generating emotional tone-based variations
+── gpt.py                      # Wrapper for OpenAI API integration
+── main.py                     # Main script to create interventions for students
+── utils.py                    # Helper functions for data extraction and intervention generation
+── requirements.txt            # List of dependencies for the project
 
 
 # Installation and Setup
