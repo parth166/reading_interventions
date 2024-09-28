@@ -23,34 +23,6 @@ The repository is organized into different directories and files for efficient m
 ├── utils.py                   # Helper functions for data extraction and intervention generation
 └── requirements.txt           # List of dependencies for the project
 
-
-Here’s a cleaned-up and organized README.md for your project, highlighting the key elements and providing clear instructions on how to navigate and use the codebase.
-
-Micro-Intervention Codebase
-This repository contains the code for generating micro-interventions aimed at improving students' reading skills. The interventions are designed to target specific words in a passage and offer tailored support based on the student's profile.
-
-Project Overview
-The project utilizes generative AI to create dynamic and adaptable word-level interventions for students. By analyzing the student's profile and the context of the passage, the system produces tailored support for word pronunciation, contextual understanding, and more. This helps students overcome specific reading challenges, making the learning experience more personalized and effective.
-
-Project Structure
-The repository is organized into different directories and files for efficient management:
-
-├── classes
-│   ├── intervention.py        # Class definition for intervention-related data
-│   ├── student.py             # Class definition for a student enrolled on the Amira platform
-│   └── word.py                # Class definition for a word and its properties
-├── dataset
-│   ├── passage.txt            # List of passages for the given study
-│   ├── students.json          # Sample ~ synthetically generated student data
-│   └── words.csv              # Extracted set of words from passage.txt
-├── intervention_components
-│   ├── template.txt           # Prompt template for the generative AI model
-│   └── emotional_tones.txt    # Template for extracting different pronunciations based on context
-├── gpt.py                     # Wrapper for OpenAI's GPT-3/4 API calls
-├── main.py                    # Main script to create interventions for students
-├── utils.py                   # Helper functions for data extraction and intervention generation
-└── requirements.txt           # List of dependencies for the project
-
 # Installation and Setup
 
 ## To run the project, follow these steps:
