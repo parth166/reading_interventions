@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Nick",
+        "age": "14",
+        "grade": "8",
+        "school": "Christian Brothers",
+        "country": "USA",
+        "prefers": "rhymes"
+    },
+    {
+        "name": "Olivia Smith",
+        "age": "12",
+        "grade": "6",
+        "school": "London Grammar School",
+        "country": "UK",
+        "prefers": "stories"
+    },
+    {
+        "name": "Jane Austin",
+        "age": "7",
+        "grade": "3",
+        "school": "Sacred Heart middle school",
+        "country": "USA",
+        "prefers": "anything"
+    }
+]

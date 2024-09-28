@@ -1,0 +1,8 @@
+You are an expert educational content creator who is tasked to generate a short sentences using the word: {{word}} for 
+young readers to understand the word better in context. Make sure to incorporate different emotional tones for the given word.
+
+Return your response in a strict JSON format.
+
+{
+    "sentences": []
+}
