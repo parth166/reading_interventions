@@ -43,7 +43,7 @@ def get_word_object(word, phrase, config):
 
     return word_obj
 
-def get_intervention(word, phrase, student_obj, config):
+def get_intervention(word, phrase, config, student_obj=None):
     """
         This is a wrapper function to get a word level intervention for a given student
         

@@ -24,6 +24,7 @@ The repository is organized into different directories and files for efficient m
 	├── utils.py                    # Helper functions for data extraction and intervention generation
 	├── read_interventions.py # File to view and extract intervention content for downstream pipeline	
 	└── requirements.txt            # List of dependencies for the project
+    └── generate_interventions.sh   # File to simulate interventions
 
 
 # Installation and Setup
@@ -53,31 +54,17 @@ Make sure to set the OPENAI_API_KEY in your environment variables
 
 ### To generate interventions for students:
 
-	python main.py
+	bash generate_interventions.sh
 
-This script will:
+This script supports 2 functions
 
-1. Load student data from students.json.
-2. Extract phrases from the given passage (passage.txt).
-3. Use the defined generative AI model to create interventions for each student based on the context of the passage and the student’s profile.
-
-Understanding main.py:
-
-The core logic in main.py is responsible for creating and saving interventions for each student:
-
-	def create_interventions(phrases, students):
-	    llm_config = json.load(open("llm_config.json"))
-
-	    with open("interventions.jsonl", "a") as f:
-	        for student in students:
-	            for phrase in tqdm(phrases):
-	                for word in phrase.split(" "):
-		            intervention = get_word_intervention(word, phrase, student, llm_config)
-			    json.dump(intervention, f)
-			    f.write("\n")
-	    f.close()
-
-Interventions are saved in the interventions.jsonl file in JSON format.
+1. Static interventions
+    - Make sure to set static variable in the arguments.
+    - Replace write path with your destination folder path (the script will create a folder in the path you mention if it does not exist).
+    - Replace with word and context accordingly.
+2. Dynamic interventions
+    - Remove the static argument.
+    - Change the write path.
 
 ### To read the saved interventions
 
