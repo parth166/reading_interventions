@@ -114,20 +114,19 @@ Prompt Templates (intervention_components/):
 
 # Intervention Design Motivation
 
-Dynamic interventions are extremely important as compared to static interventions as they cover numerous cases like:
-- Context dependent pronunciation (Past tense pronunciation of "read" is "RED" and present tense pronunciation is "REED")
-- Cultural impact of pronunciation is extremely important (American English has different pronunciations when compared to British English, hence such information should be incorporated while designing interventions).
-- Intervention object is unique for every student for a given phrase as both the "phrase" and "region" are used.
-- Student preference is modelled inside the student object but intervention object contains both (story based) and (rhyming based) interventions. Hence, each word can be presented in multiple ways to the student. (idea: Having more data and not needing it is better than having no data and needing it).
+## Considerations
+1. Intervention should be broadly applicable to a lot of words. There can be very unique interventions but scalable and simple interventions are the best.
+2. Dynamic interventions are extremely important as compared to static interventions as they cover numerous cases like:
+	- Context dependent pronunciation (Past tense pronunciation of "read" is "RED" and present tense pronunciation is "REED")
+	- Cultural impact of pronunciation is extremely important (American English has different pronunciations when compared to British English, hence such information should be incorporated while designing interventions).
+	- Intervention object is unique for every student for a given phrase as both the "phrase" and "region" are used.
+	- Student preference is modelled inside the student object but intervention object contains both (story based) and (rhyming based) interventions. Hence, each word can be presented in multiple ways to the student (idea: Having more data and not needing it is better than having no data and needing it).
 
 # Future Enhancements
 
 Dynamic Intervention Strategies:
 
-1. Develop more dynamic and adaptable intervention strategies based on real-time student performance data (Information can be extracted from student.py)
-2. Personalized Learning Paths: Create a system that adapts the intervention style based on student preferences and progress over time.
-3. Support for Multilingual Interventions: Extend support for students from different language backgrounds with tailored multilingual interventions.
-4. Prompt caching (to avoid using multiple gpt calls).
-5. Analytics on student's performance. (LLM driven/expert interventions)
-
-
+1. Personalized Learning Paths: Create a system that adapts the intervention style based on student preferences and progress over time (information can be extracted for every student from the student object)
+2. Support for Multilingual Interventions: Extend support for students from different language backgrounds with tailored multilingual interventions.
+3. Prompt caching (to avoid using multiple gpt calls).
+4. Analytics on student's performance. (LLM driven/expert interventions)

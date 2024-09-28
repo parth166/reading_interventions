@@ -1,9 +1,12 @@
 import json
-from tqdm import tqdm
+import os
 import random
-from utils import extract_phrases, get_students, get_word_intervention
+import pickle
 
-def create_interventions(phrases, students):
+from tqdm import tqdm
+from utils import extract_phrases, get_students, get_intervention
+
+def create_interventions(phrases, students, write_path):
     """
         ideal case would be of dynamic intervention ~ student specific interventions
         but if static interventions are enabled. We can try 
@@ -11,16 +14,12 @@ def create_interventions(phrases, students):
 
     llm_config = json.load(open("llm_config.json"))
 
-    with open("interventions.jsonl", "a") as f:
-        for student in students:
-            for phrase in tqdm(phrases):
-                for word in phrase.split(" "):
-                    intervention = get_word_intervention(word, phrase, student, llm_config)
-
-                    json.dump(intervention, f)
-                    f.write("\n")
-    
-    f.close()
+    for student in students:
+        for phrase in tqdm(phrases):
+            for word in phrase.split(" "):
+                intervention = get_intervention(word, phrase, student, llm_config)
+                with open(os.path.join(write_path, f'{intervention.unique_id}.pkl'), "wb") as file:
+                    pickle.dump(intervention, file)
 
 def main():
     """
@@ -35,11 +34,14 @@ def main():
     """
 
     random.seed(42)
-    
+
     phrases = random.sample(list(extract_phrases("./dataset/passage.txt").values()), 1)
     students = get_students("./dataset/students.json")
 
-    create_interventions(phrases, students.values())
+    write_path = f'./generated_interventions/'
+    os.makedirs(write_path, exist_ok=True)
+
+    create_interventions(phrases, students.values(), write_path)
 
 if __name__ == "__main__":
     main()

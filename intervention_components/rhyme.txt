@@ -1,9 +1,0 @@
-You are an expert educational content creator who is tasked to generate words that rhyme with the given word: {{word}}
-
-Make sure the words are easy to read for a beginner in the English language.
-
-Return your response in a strict JSON format as a list of words.
-
-{
-    "rhyming_words": []
-}

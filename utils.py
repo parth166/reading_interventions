@@ -1,6 +1,7 @@
 import json
 
 from classes.student import Student
+from classes.word import Word
 from classes.intervention import Intervention
 from gpt import call_model
 
@@ -26,7 +27,24 @@ def get_students(file_path):
 
     return student_objects
 
-def get_word_intervention(word, phrase, student, config):
+def get_word_object(word, phrase, config):
+    prompt = open("./intervention_components/template.txt", "r").read()
+    prompt = prompt.replace("{{word}}", word).replace("{{context}}", phrase)
+
+    expected_keywords = ["meaning", "synonyms", "antonyms", "pronunciation_american", "pronunciation_british", "rhyming_words", "story"]
+
+    response = call_model(prompt, config, expected_keywords)
+    
+    word_obj = None
+    try:
+        # word_obj = Word(word, phrase, response["pronunciation_american"], response["pronunciation_british"], response["meaning"], response["synonyms"], response["antonyms"], response["r"])
+        word_obj = Word(word, phrase, **response)
+    except:
+        print("Could not fetch details for the word", word)
+
+    return word_obj
+
+def get_intervention(word, phrase, student_obj, config):
     """
         This is a wrapper function to get a word level intervention for a given student
         
@@ -34,26 +52,16 @@ def get_word_intervention(word, phrase, student, config):
             - word : str (word dor which we need to obtain an intervention)
             - phrase: str (context in which the word appears)
             - student: object (student type object containing student's details)
+            - config: llm generation config
 
         Returns:
             - intervention object
     """
-    accent = "American"
-    if student.country == "UK":
-        accent = "British"
-    
-    prompt = open("./intervention_components/template.txt", "r").read()
-    prompt = prompt.replace("{{word}}", word).replace("{{context}}", phrase).replace("{{accent}}", accent)
+    word_obj = get_word_object(word, phrase, config)
 
-    expected_keywords = ["meaning", "synonyms", "antonyms", "pronunciation", "story"]
+    intervention_obj = Intervention(word_obj, student_obj)
 
-    response = call_model(prompt, config, expected_keywords)
-
-    intervention_obj = Intervention(word, response["meaning"], response["synonyms"], response["antonyms"], student.prefers)
-    intervention_obj.set_pronunciation_attributes(response["pronunciation"], "American" if student.country == "America" else "British")
-    intervention_obj.set_story(response["story"])
-
-    return intervention_obj.to_json()
+    return intervention_obj
 
 def main():
     phrases = extract_phrases("./dataset/passage.txt")

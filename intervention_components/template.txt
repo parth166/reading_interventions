@@ -11,9 +11,10 @@ Return your response in a strict JSON format.
 
 {
     "meaning": "... meaning of the word",
-    "pronunciation": "... pronunciation of the word in {{accent}} accent",
+    "pronunciation_american": "... pronunciation of the word in American English",
+    "pronunciation_british": "... pronunciation of the word in British English",
     "synonyms": [] # 3 synonyms of the word,
     "antonyms": [] # 3 antonyms of the word,
     "rhyming_words": [] # 3 rhyming words,
-    "story": "... a short story with no more than 50 words using the given word. Make the story engaging and creative for young students"
+    "story": "... a short story with no more than 50 words using the given word. Make the story engaging and creative for young students."
 }

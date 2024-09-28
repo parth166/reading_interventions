@@ -1,32 +1,26 @@
 import json
 
 class Intervention:
-    def __init__(self, word, meaning, synonyms, antonyms, intervention_type):
+    def __init__(self, word, student):
         self.word = word
-        self.meaning = meaning
-        self.type = intervention_type, # (rhyming, story)
-        self.pronunciation = None
-        self.accent = None
+        self.meaning = word.meaning
+        self.type = student.prefers # (rhyming, story)
+        self.pronunciation = word.pronunciation_american if student.country == "USA" else word.pronunciation_american
+        self.synonyms=word.synonyms
+        self.antonyms=word.antonyms
+        self.story = word.story
+        self.rhyming_words = word.rhyming_words
+        self.unique_id = word.get_word_hash() + str(student.get_hash_id())
+
         self.reference_image = None
         self.audio_file = None
         self.video_file = None
-        self.story = ""
-        
-    def set_pronunciation_attributes(self, pronunciation, accent):
-        self.pronunciation = pronunciation
-        self.accent = accent
 
     def set_images(self, object_images, subword_images, video=None):
         self.images = {
             "object": object_images,
-            "subword_images": subword_images
+            "subword_images": subword_images # images for objects when we break the word down into objects (Snowflake) ~ [Image of an snow + Image of a flake] 
         }
-
-    def set_rhyming_words(self, rhyming_words):
-        self.rhyming_words = rhyming_words
-    
-    def set_story(self, short_story):
-        self.story = short_story
 
     def set_meta_data(self, obj):
         """

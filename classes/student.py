@@ -1,3 +1,5 @@
+import random
+
 class Student:
     def __init__(self, name, age, grade, school, country, prefers="anything"):
         """
@@ -16,8 +18,12 @@ class Student:
         self.easy_word_set = set()
         self.instructor_comments = []
 
-        self.unique_identifier = name # simple hash for POC |||| can be replaced with better hash functions
+        self.unique_identifier = self.set_hash_id()
 
     def get_hash_id(self):
         return self.unique_identifier
+    
+    def set_hash_id(self):
+        return random.randint(100000, 999999)
+
     
