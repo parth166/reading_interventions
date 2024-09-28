@@ -1,4 +1,4 @@
-# Micro-Intervention Codebase
+# Reading Micro-Interventions
 This repository contains the code for generating micro-interventions aimed at improving students' reading skills. The interventions are designed to target specific words in a passage and offer tailored support based on the student's profile.
 
 # Project Overview
