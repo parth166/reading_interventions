@@ -65,7 +65,7 @@ Understanding main.py:
 The core logic in main.py is responsible for creating and saving interventions for each student:
 
 	def create_interventions(phrases, students):
-    	    llm_config = json.load(open("llm_config.json"))
+	    llm_config = json.load(open("llm_config.json"))
 
 	    with open("interventions.jsonl", "a") as f:
         		for student in students:
