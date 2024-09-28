@@ -112,19 +112,26 @@ Prompt Templates (intervention_components/):
 - template.txt: Template prompt for the generative AI model.
 - emotional_tones.txt: List of emotional tones for generating context-sensitive pronunciation.
 
-# Interventions implemented: 
-1. intervention by rhyming words: Hearing rhyming words for a given word can help the students understand tail sounds Example: Ping, Sing, Sling etc. (helps in pronunciation)
-2. Stories: Having an engaging story using the given word makes the students retain the words better. (helps in retention and comprehension)
-
 # Intervention Design Motivation
 
-## Considerations
-1. Intervention should be broadly applicable to a lot of words. There can be very unique interventions but scalable and simple interventions are the best.
+## Interventions implemented: 
+1. intervention by rhyming words: Hearing rhyming words for a given word can help the students understand tail sounds Example: Ping, Sing, Sling etc. (helps in pronunciation)
+2. Synthetically create Stories: Having an engaging story using the given word makes the students retain the words better. (helps in retention and comprehension)
+
+## Considerations for interventions
+1. Intervention should be broadly applicable to a lot of words (Generalisable). There can be very unique and creative interventions but scalable and simple interventions are the best for a quick MVP.
 2. Dynamic interventions are extremely important as compared to static interventions as they cover numerous cases like:
 	- Context dependent pronunciation (Past tense pronunciation of "read" is "RED" and present tense pronunciation is "REED")
 	- Cultural impact of pronunciation is extremely important (American English has different pronunciations when compared to British English, hence such information should be incorporated while designing interventions).
-3. Intervention object is unique for every student for a given phrase as both the "phrase" and "region" are used.
-4. Student preference is modelled inside the student object but intervention object contains both (story based) and (rhyming based) interventions. Hence, each word can be presented in multiple ways to the student (idea: Having more data and not needing it is better than having no data and needing it).
+3. Intervention object  should be unique for every student.
+4. Student preference is modelled inside the student object but intervention object contains both (story based) and (rhyming based) interventions (can be extended to more in the future). Hence, each word can be presented in multiple ways to the student (motivation: Having more data and not needing it is better than having no data and needing it).
+
+## Pipeline Design Approach
+1. Brainstorming different ideas for intervention and discussing drawbacks and strengths for each. This includes first identifying levels of intervention (at word level and at student level), followed by research on different components at word level intervention grounded on student and nearby context)
+2. Building an MVP (minimum viable product) by shortlisting easier to implement but effective interventions. 
+3. Designing a class structure and making sure there are no redundancies or cyclic dependencies in the pipeline design.
+4. Making additional placeholders in classes to store more data and allow for future interventions.
+5. Trying to use hashed values (at a very surface level) to give a sense of privacy while storing student specific intervention as we are storing complete data ~ can be improved.
 
 # Future Enhancements
 
